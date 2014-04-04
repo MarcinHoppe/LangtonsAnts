@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcinHoppe.LangtonsAnts.Tests", "Test\MarcinHoppe.LangtonsAnts.Tests\MarcinHoppe.LangtonsAnts.Tests.csproj", "{412FC54A-B439-4160-9EF5-96CC88526DD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcinHoppe.LangtonsAnts", "Src\MarcinHoppe.LangtonsAnts\MarcinHoppe.LangtonsAnts.csproj", "{DBDBA3FC-342E-4DB6-88DA-57912A919510}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{412FC54A-B439-4160-9EF5-96CC88526DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412FC54A-B439-4160-9EF5-96CC88526DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412FC54A-B439-4160-9EF5-96CC88526DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412FC54A-B439-4160-9EF5-96CC88526DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBDBA3FC-342E-4DB6-88DA-57912A919510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBDBA3FC-342E-4DB6-88DA-57912A919510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBDBA3FC-342E-4DB6-88DA-57912A919510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBDBA3FC-342E-4DB6-88DA-57912A919510}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
