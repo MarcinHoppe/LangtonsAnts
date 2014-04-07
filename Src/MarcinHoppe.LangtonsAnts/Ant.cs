@@ -2,7 +2,7 @@
 
 namespace MarcinHoppe.LangtonsAnts
 {
-    class Ant
+    public class Ant
     {
         Direction direction = Direction.Up();
 
