@@ -22,7 +22,7 @@ namespace MarcinHoppe.LangtonsAnts.Tests
         }
 
         [Fact]
-        public void AndTurnsLeftOnBlackSquare()
+        public void AntTurnsLeftOnBlackSquare()
         {
             // Arrange
             var ant = AntAt(10, 7);
