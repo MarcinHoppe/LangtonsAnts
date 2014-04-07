@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarcinHoppe.LangtonsAnts
 {
-    abstract class Direction
+    public abstract class Direction
     {
         public abstract Direction TurnRight();
 
@@ -23,7 +19,7 @@ namespace MarcinHoppe.LangtonsAnts
         public static Direction Right() { return new Right(); }
     }
 
-    class Up : Direction
+    public class Up : Direction
     {
         public override Direction TurnRight() { return Direction.Right(); }
 
@@ -35,7 +31,7 @@ namespace MarcinHoppe.LangtonsAnts
         }
     }
 
-    class Down : Direction
+    public class Down : Direction
     {
         public override Direction TurnRight() { return Direction.Left(); }
 
@@ -47,7 +43,7 @@ namespace MarcinHoppe.LangtonsAnts
         }
     }
 
-    class Left : Direction
+    public class Left : Direction
     {
         public override Direction TurnRight() { return Direction.Up(); }
 
@@ -59,7 +55,7 @@ namespace MarcinHoppe.LangtonsAnts
         }
     }
 
-    class Right : Direction
+    public class Right : Direction
     {
         public override Direction TurnRight() { return Direction.Down(); }
 
