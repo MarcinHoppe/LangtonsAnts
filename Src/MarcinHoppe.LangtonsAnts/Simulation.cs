@@ -29,7 +29,7 @@ namespace MarcinHoppe.LangtonsAnts
 
         private void FlipColor()
         {
-            board.ToggleColorAt(ant.Position);
+            board.FlipColorAt(ant.Position);
         }
 
         private void MoveAnt()

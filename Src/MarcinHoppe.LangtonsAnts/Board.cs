@@ -8,7 +8,7 @@ namespace MarcinHoppe.LangtonsAnts
 
         bool Contains(Position position);
 
-        void ToggleColorAt(Position position);
+        void FlipColorAt(Position position);
 
         Colors ColorAt(Position Position);
     }
