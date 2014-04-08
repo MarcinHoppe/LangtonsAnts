@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 using Moq;
 using Xunit;
@@ -54,6 +55,33 @@ namespace MarcinHoppe.LangtonsAnts.Tests
 
             // Assert
             mock.Verify(b => b.FlipColorAt(antPosition));
+        }
+
+        [Fact]
+        public void SimulationFlipsColorAtAllPositionsVisitedByAnt()
+        {
+            // Arrange
+            Position[] antPositions = new Position[] 
+            {
+                Position.At(10, 7),
+                Position.At(10, 8),
+                Position.At(11, 8)
+            };
+            var mock = new Mock<Board>();
+            mock.Setup(b => b.Center).Returns(antPositions.First());
+            mock.Setup(b => b.Contains(It.IsAny<Position>())).Returns(true);
+            mock.Setup(b => b.ColorAt(It.IsAny<Position>())).Returns(Colors.White);
+
+            // Act
+            var simulation = new Simulation(mock.Object);
+            simulation.MakeStep();
+            simulation.MakeStep();
+            simulation.MakeStep();
+
+            // Assert
+            mock.Verify(b => b.FlipColorAt(antPositions[0]), Times.Once());
+            mock.Verify(b => b.FlipColorAt(antPositions[1]), Times.Once());
+            mock.Verify(b => b.FlipColorAt(antPositions[2]), Times.Once());
         }
     }
 }
