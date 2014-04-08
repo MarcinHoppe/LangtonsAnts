@@ -27,7 +27,7 @@ namespace MarcinHoppe.LangtonsAnts
 
         public override Position Translate(Position position)
         {
-            return new Position { Row = position.Row - 1, Column = position.Column };
+            return Position.At(position.Row - 1, position.Column);
         }
     }
 
@@ -39,7 +39,7 @@ namespace MarcinHoppe.LangtonsAnts
 
         public override Position Translate(Position position)
         {
-            return new Position { Row = position.Row + 1, Column = position.Column };
+            return Position.At(position.Row + 1, position.Column);
         }
     }
 
@@ -51,7 +51,7 @@ namespace MarcinHoppe.LangtonsAnts
 
         public override Position Translate(Position position)
         {
-            return new Position { Row = position.Row, Column = position.Column - 1 };
+            return Position.At(position.Row, position.Column - 1);
         }
     }
 
@@ -63,7 +63,7 @@ namespace MarcinHoppe.LangtonsAnts
 
         public override Position Translate(Position position)
         {
-            return new Position { Row = position.Row, Column = position.Column + 1 };
+            return Position.At(position.Row, position.Column + 1);
         }
     }
 }

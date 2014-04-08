@@ -10,10 +10,6 @@ namespace MarcinHoppe.LangtonsAnts
         public Simulation(Board board)
         {
             this.board = board;
-        }
-
-        public void Start()
-        {
             ant.Position = board.Center;
         }
 

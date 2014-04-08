@@ -4,8 +4,8 @@ namespace MarcinHoppe.LangtonsAnts
 {
     public struct Position : IEquatable<Position>
     {
-        public int Row { get; set; }
-        public int Column { get; set; }
+        public int Row { get; private set; }
+        public int Column { get; private set; }
 
         public bool Equals(Position other)
         {
@@ -15,6 +15,11 @@ namespace MarcinHoppe.LangtonsAnts
         public override string ToString()
         {
             return string.Format("({0},{1})", Row, Column);
+        }
+
+        public static Position At(int row, int column)
+        {
+            return new Position { Row = row, Column = column };
         }
     }
 }

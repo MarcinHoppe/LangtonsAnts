@@ -36,16 +36,11 @@ namespace MarcinHoppe.LangtonsAnts.Tests
         [Fact]
         public void Translation()
         {
-            var position = new Position { Row = 10, Column = 7 };
-            Assert.Equal(PositionAt(9, 7), Direction.Up().Translate(position));
-            Assert.Equal(PositionAt(11, 7), Direction.Down().Translate(position));
-            Assert.Equal(PositionAt(10, 6), Direction.Left().Translate(position));
-            Assert.Equal(PositionAt(10, 8), Direction.Right().Translate(position));
-        }
-
-        private Position PositionAt(int row, int column)
-        {
-            return new Position { Row = row, Column = column };
+            var position = Position.At(10, 7);
+            Assert.Equal(Position.At(9, 7), Direction.Up().Translate(position));
+            Assert.Equal(Position.At(11, 7), Direction.Down().Translate(position));
+            Assert.Equal(Position.At(10, 6), Direction.Left().Translate(position));
+            Assert.Equal(Position.At(10, 8), Direction.Right().Translate(position));
         }
     }
 }

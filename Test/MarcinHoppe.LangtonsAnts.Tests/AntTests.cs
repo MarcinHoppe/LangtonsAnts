@@ -12,13 +12,13 @@ namespace MarcinHoppe.LangtonsAnts.Tests
         {
             // Arrange
             var ant = AntAt(10, 7);
-            var board = Mock.Of<Board>(b => b.ColorAt(PositionAt(10, 7)) == Colors.White);
+            var board = Mock.Of<Board>(b => b.ColorAt(Position.At(10, 7)) == Colors.White);
 
             // Act
             ant.MoveOn(board);
 
             // Assert
-            Assert.Equal(PositionAt(10, 8), ant.Position);
+            Assert.Equal(Position.At(10, 8), ant.Position);
         }
 
         [Fact]
@@ -26,28 +26,20 @@ namespace MarcinHoppe.LangtonsAnts.Tests
         {
             // Arrange
             var ant = AntAt(10, 7);
-            var board = Mock.Of<Board>(b => b.ColorAt(PositionAt(10, 7)) == Colors.Black);
+            var board = Mock.Of<Board>(b => b.ColorAt(Position.At(10, 7)) == Colors.Black);
 
             // Act
             ant.MoveOn(board);
 
             // Assert
-            Assert.Equal(PositionAt(10, 6), ant.Position);
+            Assert.Equal(Position.At(10, 6), ant.Position);
         }
 
         private Ant AntAt(int row, int column)
         {
             return new Ant() 
             { 
-                Position = new Position { Row = row, Column = column } 
-            };
-        }
-
-        private Position PositionAt(int row, int column)
-        {
-            return new Position
-            {
-                Row = row, Column = column
+                Position = Position.At(row, column)
             };
         }
     }
