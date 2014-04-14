@@ -10,6 +10,6 @@ namespace MarcinHoppe.LangtonsAnts
 
         void FlipColorAt(Position position);
 
-        Colors ColorAt(Position Position);
+        Colors ColorAt(Position position);
     }
 }

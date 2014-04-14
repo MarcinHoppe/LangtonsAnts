@@ -93,6 +93,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarcinHoppe.LangtonsAnts\MarcinHoppe.LangtonsAnts.csproj">
+      <Project>{dbdba3fc-342e-4db6-88da-57912a919510}</Project>
+      <Name>MarcinHoppe.LangtonsAnts</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
