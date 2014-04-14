@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace MarcinHoppe.LangtonsAnts.App
 {
@@ -26,6 +27,7 @@ namespace MarcinHoppe.LangtonsAnts.App
         {
             InitializeComponent();
             SetupGrid();
+            StartSimulation();
         }
 
         private void SetupGrid()
@@ -48,7 +50,7 @@ namespace MarcinHoppe.LangtonsAnts.App
 
         private void DrawRectangleAt(int row, int column)
         {
-            grid.Children.Add(new Rectangle() 
+            grid.Children.Add(new Rectangle
             { 
                 Fill = Brushes.White,
                 Stroke = Brushes.Black,
@@ -110,6 +112,15 @@ namespace MarcinHoppe.LangtonsAnts.App
             {
                 return Colors.Black;
             }
+        }
+
+        private void StartSimulation()
+        {
+            var simulation = new Simulation(this);
+            var timer = new DispatcherTimer();
+            timer.Tick += (object sender, EventArgs args) => simulation.MakeStep();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Start();
         }
     }
 }
