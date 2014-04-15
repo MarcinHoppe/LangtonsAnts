@@ -21,7 +21,7 @@ namespace MarcinHoppe.LangtonsAnts.App
     /// </summary>
     public partial class MainWindow : Window, Board
     {
-        private const int BoardSize = 11;
+        private const int BoardSize = 71;
 
         public MainWindow()
         {
@@ -119,7 +119,7 @@ namespace MarcinHoppe.LangtonsAnts.App
             var simulation = new Simulation(this);
             var timer = new DispatcherTimer();
             timer.Tick += (object sender, EventArgs args) => simulation.MakeStep();
-            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Start();
         }
     }
