@@ -40,12 +40,17 @@ namespace MarcinHoppe.LangtonsAnts.App
 
         private void DrawRectangleAt(int row, int column)
         {
-            grid.Children.Add(new Rectangle
+            grid.Children.Add(WhiteRectangle());
+        }
+
+        private Rectangle WhiteRectangle()
+        {
+            return new Rectangle
             {
                 Fill = Brushes.White,
                 Stroke = Brushes.Black,
                 StrokeThickness = 0.2
-            });
+            };
         }
 
         public Position Center
@@ -66,7 +71,7 @@ namespace MarcinHoppe.LangtonsAnts.App
         public void FlipColorAt(Position position)
         {
             var rectangle = RectangleAt(position);
-            rectangle.Fill = FlipFill(rectangle.Fill);
+            rectangle.Fill = rectangle.Fill.Flip();
         }
 
         private Rectangle RectangleAt(Position position)
@@ -79,29 +84,9 @@ namespace MarcinHoppe.LangtonsAnts.App
             return position.Row * BoardSize + position.Column;
         }
 
-        private Brush FlipFill(Brush brush)
-        {
-            if (brush == Brushes.White)
-            {
-                return Brushes.Black;
-            }
-            else
-            {
-                return Brushes.White;
-            }
-        }
-
         public Colors ColorAt(Position position)
         {
-            var rectangle = RectangleAt(position);
-            if (rectangle.Fill == Brushes.White)
-            {
-                return Colors.White;
-            }
-            else
-            {
-                return Colors.Black;
-            }
+            return RectangleAt(position).Fill.AsColor();
         }
     }
 }
