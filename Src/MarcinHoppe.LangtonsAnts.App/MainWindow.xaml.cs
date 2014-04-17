@@ -28,7 +28,7 @@ namespace MarcinHoppe.LangtonsAnts.App
         {
             InitializeComponent();
             CreateSimulationOnBoard();
-            StartTimerForSimulation();
+            StartSimulation();
         }
 
         private void CreateSimulationOnBoard()
@@ -37,17 +37,10 @@ namespace MarcinHoppe.LangtonsAnts.App
             simulation = new Simulation(board);
         }
 
-        private void StartTimerForSimulation()
+        private void StartSimulation()
         {
-            var timer = new DispatcherTimer();
-            timer.Tick += MakeSimulationStep;
-            timer.Interval = TimeSpan.FromMilliseconds(100);
-            timer.Start();
-        }
-
-        private void MakeSimulationStep(object sender, EventArgs e)
-        {
-            simulation.MakeStep();
+            var clock = new Clock(simulation);
+            clock.Start();
         }
     }
 }
